@@ -5,33 +5,34 @@
     <title>Document</title>
     <style>
         .container{
-            display: grid;
-            /* grid-template-columns: auto auto auto; Sütun oluşturma işlemi , sütunların genişliğini ayarlıyoruz. yan yana iki tane
-            yazdığımızda iki adet yanyana sutun olmasını ayarlıyoruz. */
-            grid-template-columns: repeat(3,180px); /* Eğer yan yana eşit şekilde sütun oluşturcaksak bunu da kullanabiliriz. */
-            /* grid-template-rows: 100px;  Satır genişliği ayarlanır */
-            /* grid-auto-rows: 80px;  Eğer çok fazla sayıda satıra sahipsek ve genişliklerini tek tek girmek istemiyorsak bu işe yarar */
-            grid-auto-rows: minmax(80px,auto); /* Satıra sığmayan metin olduğu durumlarda min verilen ilk değer sığarsa değişmez ancak
-            sığmıyorsa sığdığı minimum yüksekliğe kendisini ayarlar. */
-            gap: 10px; /* margin ile vermeye çalıştığımız boşlukları responsiveliğe daha uygun şekilde vermemizi sağlar. */
-
+            display: flex;
+            /* justify-content: center;  x ekseninde hizalama */
+            /* align-items: center;  y ekseninde hizalama */
+            gap: 10px;
+            /* flex-direction: row-reverse; */
+            flex-wrap: wrap; /* Wrap özelliği ekrana sığmadıgı durumda aşağı satıra geçmesini sağlar. */
         }
         .item{
             background-color: blueviolet;
             color: white;
             /* margin: 10px; */
             padding: 10px;
+            width: 300px;
         }
         .item1{
-            /* grid-row: 1/ span 2;  Birinci satırdan başla 3.satıra kadar genişliğini götür demek. span ise şu kadar birim sonrası demektir */
-            /* grid-column: 1/3;  Yukardaki iki satır kodla yazdığımız şeyi tek satırda yazabiliriz aşağıdaki gibi. */
-            grid-area: 1/1/3/3;
+            height: 100px;
+        }
+        .item2{
+            height: 150px;
+        }
+        .item3{
+            height: 80px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="item item1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, modi at tempora minus quo facilis eaque, culpa sit a similique, reiciendis quidem explicabo eum optio earum nisi placeat necessitatibus et.</div>
+        <div class="item item1">1</div>
         <div class="item item2">2</div>
         <div class="item item3">3</div>
         <div class="item item4">4</div>
